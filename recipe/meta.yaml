@@ -20,7 +20,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [osx or aarch64 or ppc64le]
+  skip: true  # [osx or (linux and s390x) or aarch64 or ppc64le]
 
 test:
   commands:
