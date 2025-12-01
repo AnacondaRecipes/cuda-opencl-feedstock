@@ -1,7 +1,7 @@
 {% set name = "cuda-opencl" %}
-{% set version = "12.8.90" %}
+{% set version = "13.0.85" %}
 {% set lib_version = "1.0.0" %}
-{% set cuda_version = "12.8" %}
+{% set cuda_version = "13.0" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "windows-x86_64" %}  # [win]
 {% set target_name = "x86_64-linux" %}  # [linux64]
@@ -15,11 +15,11 @@ package:
 
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_opencl/{{ platform }}/cuda_opencl-{{ platform }}-{{ version }}-archive.{{ extension }}
-  sha256: 093c1264b9f3fb9a53b78b76ab8c1babd2aab8872149d968b58d642170a62bde  # [linux64]
-  sha256: a9936cd3df23a95ae4fecaf1434fabf0e9436104b65ae11788f770757a554e52  # [win]
+  sha256: f48040e3054d561484e4ba136650cec68eeebaf4ff4d70d1d704dcdc5f38cf90  # [linux64]
+  sha256: ef7b189fba61e0fd13e5f50b940fc0e22f9d211481d1c7061b9d586641929f3b  # [win]
 
 build:
-  number: 1
+  number: 0
   skip: true  # [osx or aarch64 or ppc64le]
 
 requirements:
@@ -71,7 +71,7 @@ outputs:
       - targets/{{ target_name }}/include           # [linux]
       - targets/{{ target_name }}/lib/libOpenCL.so  # [linux]
       - Library\include                             # [win]
-      - Library\lib                                 # [win]
+      - Library\lib\{{ target_name }}               # [win]
     requirements:
       build:
         - {{ compiler("c") }}
@@ -88,7 +88,7 @@ outputs:
         - test -f $PREFIX/targets/{{ target_name }}/include/CL/cl.h   # [linux]
         - test -L $PREFIX/targets/{{ target_name }}/lib/libOpenCL.so  # [linux]
         - if not exist %LIBRARY_INC%\CL\cl.h exit 1                     # [win]
-        - if not exist %LIBRARY_LIB%\OpenCL.lib exit 1                  # [win]
+        - if not exist %LIBRARY_LIB%\{{ target_name }}\OpenCL.lib exit 1                  # [win]
     about:
       home: https://developer.nvidia.com/cuda-toolkit
       license_file: LICENSE
