@@ -20,7 +20,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [osx or aarch64 or ppc64le]
+  skip: true  # [osx or aarch64]
 
 requirements:
   build:
@@ -57,10 +57,12 @@ outputs:
       license_file: LICENSE
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
+      license_family: Other
       summary: CUDA OpenCL native Libraries
       description: |
         CUDA OpenCL native Libraries
       doc_url: https://docs.nvidia.com/cuda/index.html
+      dev_url: https://docs.nvidia.com/cuda/index.html
 
   - name: cuda-opencl-dev
     build:
@@ -94,20 +96,24 @@ outputs:
       license_file: LICENSE
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
+      license_family: Other
       summary: CUDA OpenCL native Libraries
       description: |
         CUDA OpenCL native Libraries
       doc_url: https://docs.nvidia.com/cuda/index.html
+      dev_url: https://docs.nvidia.com/cuda/index.html
 
 about:
   home: https://developer.nvidia.com/cuda-toolkit
   license: LicenseRef-NVIDIA-End-User-License-Agreement
   license_file: LICENSE
   license_url: https://docs.nvidia.com/cuda/eula/index.html
+  license_family: Other
   summary: CUDA OpenCL native Libraries
   description: |
     CUDA OpenCL native Libraries
   doc_url: https://docs.nvidia.com/cuda/index.html
+  dev_url: https://docs.nvidia.com/cuda/index.html
 
 extra:
   recipe-maintainers:
