@@ -1,7 +1,7 @@
 {% set name = "cuda-opencl" %}
-{% set version = "13.1.115" %}
+{% set version = "13.2.75" %}
 {% set lib_version = "1.0.0" %}
-{% set cuda_version = "13.1" %}
+{% set cuda_version = "13.2" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "windows-x86_64" %}  # [win]
 {% set target_name = "x86_64-linux" %}  # [linux64]
@@ -15,8 +15,8 @@ package:
 
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cuda_opencl/{{ platform }}/cuda_opencl-{{ platform }}-{{ version }}-archive.{{ extension }}
-  sha256: e0b8ec9c209035aca8ffe878b92a4b5abf74f093045870fc298440915a98adc5  # [linux64]
-  sha256: e72de7a6d601de8b282c7317d83844403e9ef4a84b3b1c51e7add0d4e057bbe9  # [win]
+  sha256: c7a7febcac431426c5cf8e4dfcdeb28d1be05fa2eb6572f2abc821d12b20ad6b  # [linux64]
+  sha256: d0df29b99d75b4e1f00c8b7d062cccefb84999937e56eb661d1a4b2307d366bb  # [win]
 
 build:
   number: 0
@@ -57,6 +57,7 @@ outputs:
       license_file: LICENSE
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
+      license_family: Other
       summary: CUDA OpenCL native Libraries
       description: |
         CUDA OpenCL native Libraries
@@ -95,6 +96,7 @@ outputs:
       license_file: LICENSE
       license: LicenseRef-NVIDIA-End-User-License-Agreement
       license_url: https://docs.nvidia.com/cuda/eula/index.html
+      license_family: Other
       summary: CUDA OpenCL native Libraries
       description: |
         CUDA OpenCL native Libraries
@@ -106,6 +108,7 @@ about:
   license: LicenseRef-NVIDIA-End-User-License-Agreement
   license_file: LICENSE
   license_url: https://docs.nvidia.com/cuda/eula/index.html
+  license_family: Other
   summary: CUDA OpenCL native Libraries
   description: |
     CUDA OpenCL native Libraries
@@ -113,8 +116,6 @@ about:
   dev_url: https://docs.nvidia.com/cuda/index.html
 
 extra:
-  skip-lints:
-    - license_file_overspecified
   recipe-maintainers:
     - conda-forge/cuda
   feedstock-name: cuda-opencl
