@@ -3,3 +3,6 @@ upstream_sources:
   - webpage:
       url: https://api.anaconda.org/package/conda-forge/cuda-opencl
       regex: '"version":\s*"([^"]+)"'
+    packages:
+      - cuda-opencl
+      - cuda-opencl-dev
